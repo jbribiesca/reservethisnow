@@ -5,6 +5,7 @@ module.exports = {
   findAll: function(req, res) {
     db.Appointment
       .find(req.query)
+      .populate("User")
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -31,6 +32,7 @@ module.exports = {
   findById: function(req, res) {
     db.Appointment
       .findById(req.params.id)
+      .populate({path: "name", model: "User"})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

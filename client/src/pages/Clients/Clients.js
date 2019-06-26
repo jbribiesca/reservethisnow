@@ -1,41 +1,32 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-import moment from "moment";
 
 class Books extends Component {
-  state = {
-    appointments: [],
-    title: "",
-    client: "",
-    member: "",
-    starttime: "",
-    endtime: "",
-    user: "",
-  };
-
-  componentDidMount() {
-    this.loadAppointments();
-  }
-
-  loadAppointments = () => {
-    API.getAppointments()
-      .then(res =>
-        this.setState({ appointments: res.data, title: "", client: "", member: "", starttime: "", endtime: "", user: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
-  deleteAppointment = id => {
-    API.deleteAppointment(id)
-      .then(res => this.loadAppointments())
-      .catch(err => console.log(err));
-  };
+    state = {
+        appointments: [],
+        title: "",
+        client: "",
+        member: "",
+        starttime: "",
+        endtime: "",
+        user: "",
+      };
+    
+      componentDidMount() {
+        this.loadAppointments();
+      }
+    
+      loadAppointments = () => {
+        API.getAppointments()
+          .then(res =>
+            this.setState({ appointments: res.data, title: "", client: "", member: "", starttime: "", endtime: "", user: "" })
+          )
+          .catch(err => console.log(err));
+      };
+    
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -54,7 +45,7 @@ class Books extends Component {
         endtime: this.state.endtime,
         user: "5d13a888c79ecf5cb81044e6"
       })
-        .then(res => this.loadAppointments())
+        .then(res => window.location.href = "/thankyou")
         .catch(err => console.log(err));
     }
   };
@@ -100,24 +91,8 @@ class Books extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Appointments On My List</h1>
+              <h1>Hours of Operation for Jerry</h1>
             </Jumbotron>
-            {this.state.appointments.length ? (
-              <List>
-                {this.state.appointments.map(appointments => (
-                  <ListItem key={appointments._id}>
-                    <Link to={"/appointments/" + appointments._id}>
-                      <strong>
-                      {appointments.title} by {appointments.client} at {moment(appointments.starttime).format("MMMM Do YYYY, h:mm a").toString()}  - {moment(appointments.endtime).format("MMMM Do YYYY, h:mm a").toString()}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteAppointment(appointments._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
           </Col>
         </Row>
       </Container>

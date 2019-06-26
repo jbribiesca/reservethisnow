@@ -30,14 +30,8 @@ class Nav extends Component {
       {this.state.authenticated ? (
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-          </li>
           <li className="nav-item">
             <a className="nav-link" href="/appointments">Appointments</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/users">Clients</a>
           </li>
         </ul>
         <span className="navbar-text">
@@ -47,9 +41,12 @@ class Nav extends Component {
       ) : (
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+          {/* <li className="nav-item active">
             <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-          </li>
+          </li> */}
+          {/* <li className="nav-item">
+          <a className="nav-link" href="/Clients">Clients <span className="sr-only">(current)</span></a>
+          </li> */}
         </ul>
         <span>
           <a className="nav-link" href="/login">Login</a>

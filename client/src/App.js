@@ -2,8 +2,9 @@ import React from "react";
 import Auth from './utils/Auth';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Appointments from "./pages/Appointments";
+import Clients from "./pages/Clients";
+import Thankyou from "./pages/Clients/Thankyou";
 import Detail from "./pages/Detail";
-import Users from "./pages/Users";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./pages/Login";
@@ -33,15 +34,16 @@ const App = () =>
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Appointments} />
-        <Route exact path="/home" component={Appointments} />
-        <Route exact path="/appointments" component={Appointments} />
-        <Route exact path="/appointments/:id" component={Detail} />
-        <PrivateRoute exact path="/protected" component={Users} />
-        <Route exact path="/users" component={Users} />
+        <PrivateRoute exact path="/" component={Appointments} />
+        <PrivateRoute path="/home" component={Appointments} />
+        <PrivateRoute exact path="/appointments" component={Appointments} />
+        <PrivateRoute exact path="/appointments/:id" component={Detail} />
+        <PrivateRoute exact path="/protected" component={Appointments} />
+        <Route exact path="/clients" component={Clients}/>
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
+        <Route exact path="/thankyou" component={Thankyou} />
         <Route component={NoMatch} />
       </Switch>
     </div>

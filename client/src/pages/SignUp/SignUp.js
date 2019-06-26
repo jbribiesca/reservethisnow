@@ -10,7 +10,6 @@ class SignUp extends Component {
     name: "",
     email: "",
     password: "",
-    userType: "",
     errorMessage: null
   };
 
@@ -40,7 +39,6 @@ class SignUp extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      userType: this.state.userType
     };
 
     API.signUp(userData)
@@ -67,7 +65,7 @@ class SignUp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.name && this.state.email && this.state.password && this.state.userType) {
+    if (this.state.name && this.state.email && this.state.password) {
       this.signUp();
     } else {
       this.setState({ errorMessage: "Please enter all required fields to sign up."})
@@ -112,18 +110,7 @@ class SignUp extends Component {
             required=""
           />
           <label htmlFor="password" className="sr-only">Password</label>
-          <select
-            value={this.state.userType}
-            onChange={this.handleInputChange}
-            name="userType"
-            placeholder="User type"
-            className="form-control"
-            required=""
-          >
-            <option value="" disabled>Select role</option>
-            <option value="instructor">Instructor</option>
-            <option value="student">Student</option>
-          </select>
+
           <div className="checkbox mb-3 text-danger">
             {this.state.errorMessage}
           </div>

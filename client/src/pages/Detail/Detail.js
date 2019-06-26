@@ -13,7 +13,7 @@ class Detail extends Component {
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getAppointment(this.props.match.params.id)
-      .then(res => this.setState({ appointment: res.data }))
+      .then(res => this.setState({ appointment: res.data }) +       console.log(res.data))
       .catch(err => console.log(err));
   }
 
@@ -26,6 +26,7 @@ class Detail extends Component {
               <h1>
                 {this.state.appointment.title} by {this.state.appointment.client}
               </h1>
+              {this.state.appointment.user}
             </Jumbotron>
           </Col>
         </Row>
