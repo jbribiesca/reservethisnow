@@ -1,2 +1,1 @@
-# reactreadinglist-auth
-React Reading List App with simple Auth
+# Project 3
