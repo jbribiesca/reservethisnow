@@ -1,6 +1,7 @@
 const ObjectId = require("mongoose").Types.ObjectId;
 const db = require("../models");
 
+
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
@@ -32,9 +33,23 @@ module.exports = {
   },
   create: function(req, res) {
     db.Appointment
+      // console.log(req.body)
       .create(req.body)
       .then(dbAppointment => {
         return db.User.findOneAndUpdate({ _id: req.user._id }, { $push: { appointments: dbAppointment._id } }, { new: true });
+      })
+      .then((dbUser) => {
+        // If the User was updated successfully, send it back to the client
+        res.json(dbUser);
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  clientCreate: function(req, res) {
+    db.Appointment
+      // console.log(req.body)
+      .create(req.body)
+      .then(dbAppointment => {
+        return db.User.findOneAndUpdate({ _id: req.body.id }, { $push: { appointments: dbAppointment._id } }, { new: true });
       })
       .then((dbUser) => {
         // If the User was updated successfully, send it back to the client

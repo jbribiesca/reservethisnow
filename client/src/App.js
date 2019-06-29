@@ -4,6 +4,7 @@ import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import Nav from "./components/Nav";
 import Appointments from './pages/Appointments';
+import Clients from './pages/Clients';
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
@@ -15,7 +16,7 @@ class App extends Component {
     
 		this.state = {
 			loggedIn: false,
-			user: null
+			user: null,
     };
   }
   
@@ -78,12 +79,13 @@ class App extends Component {
               </Switch>
             </div>
           </div>
-        )}
+		)}
         { !this.state.loggedIn && (
           <div className="auth-wrapper" style={{paddingTop:40}}>
             <Route exact path="/" component={() => <LoginForm login={this.login}/>} />
             <Route exact path="/appointments" component={() => <LoginForm user={this.login}/>} />
             <Route exact path="/signup" component={SignupForm} />
+			<Route exact path="/:id" component={Clients} />
           </div>
         )}
 			</div>

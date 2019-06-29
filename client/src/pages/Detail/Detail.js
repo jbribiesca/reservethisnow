@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import moment from "moment"
 
 class Detail extends Component {
   state = {
@@ -33,7 +34,7 @@ class Detail extends Component {
             <article>
               <h1>Appointment Details</h1>
               <p>
-                {this.state.appointment.starttime}
+              {moment(this.state.appointment.starttime).format("MMMM Do YYYY, h:mm a").toString()}  - {moment(this.state.appointment.endtime).format("MMMM Do YYYY, h:mm a").toString()}
               </p>
             </article>
           </Col>

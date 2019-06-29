@@ -9,6 +9,7 @@ const userSchema = new Schema({
 	lastName: { type: String, unique: false },
   username: { type: String, unique: false, required: false },
   password: { type: String, unique: false, required: false },
+  owner: {type: Boolean, default: 0},
   appointments: [
     {
       // Store ObjectIds in the array

@@ -3,7 +3,10 @@ import axios from "axios";
 export default {
   // Gets user info
   getUser: function() {
-    return axios.get('/auth/user');
+    return axios.get('/auth/user/');
+  },
+  findUser: function() {
+    return axios.get('/auth/finduser/:id')
   },
   // Logs the user out
   logout: function() {

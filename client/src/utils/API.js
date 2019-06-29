@@ -16,5 +16,8 @@ export default {
   // Saves a book to the database
   saveAppointment: function(appointmentsData) {
     return axios.post("/api/appointments", appointmentsData);
+  },
+  saveClientAppointment: function(appointmentsData) {
+    return axios.post("/api/appointments", appointmentsData);
   }
 };

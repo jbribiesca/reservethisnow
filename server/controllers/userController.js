@@ -3,13 +3,23 @@ const db = require("../models");
 // Defining methods for the userController
 module.exports = {
   getUser: (req, res, next) => {
-    // console.log(req.user);
     if (req.user) {
       return res.json({ user: req.user });
     } else {
       return res.json({ user: null });
     }
   },
+  findUser: (req, res) => {
+    db.User.findOne({"username": req.params.id})
+    .then(function(dbuser) {
+      res.json(dbuser);
+    })
+    .catch(function(err) {
+      // If an error occurs, send it back to the client
+      res.json(err);
+    });
+    },
+  
   register: (req, res) => {
     const { firstName, lastName, username, password } = req.body;
     // ADD VALIDATION

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import moment from "moment";
 
 class Appointments extends Component {
   state = {
@@ -61,7 +62,7 @@ class Appointments extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Book an appointment!</h1>
+              <h1>Schedule an appointment!</h1>
             </Jumbotron>
             <form>
               <Input
@@ -104,7 +105,7 @@ class Appointments extends Component {
                   <ListItem key={appointment._id}>
                     <Link to={"/appointments/" + appointment._id}>
                       <strong>
-                        {appointment.title} by {appointment.author}
+                        {appointment.title} by {appointment.client} at {moment(appointment.starttime).format("MMMM Do YYYY, h:mm a").toString()}  - {moment(appointment.endtime).format("MMMM Do YYYY, h:mm a").toString()}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteAppointment(appointment._id)} />
