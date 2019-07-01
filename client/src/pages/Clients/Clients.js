@@ -80,13 +80,13 @@ class Appointments extends Component {
                             value={this.state.title}
                             onChange={this.handleInputChange}
                             name="title"
-                            placeholder="Appointment (required)"
+                            placeholder="Appointment Title (required)"
                           />
                           <Input
                             value={this.state.client}
                             onChange={this.handleInputChange}
                             name="client"
-                            placeholder="Client (required)"
+                            placeholder="Client Name (required)"
                           />
                            <Input
                             value={this.state.phone}
