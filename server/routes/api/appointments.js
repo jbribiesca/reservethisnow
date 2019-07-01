@@ -4,9 +4,10 @@ const appointmentsController = require("../../controllers/appointmentsController
 // Matches with "/api/books"
 router.route("/")
   .get(appointmentsController.findAll)
-  // .post(appointmentsController.create)
+  .post(appointmentsController.create);
+  
+router.route("/client")
   .post(appointmentsController.clientCreate);
-
 // Matches with "/api/books/:id"
 router
   .route("/:id")

@@ -8,6 +8,7 @@ const userSchema = new Schema({
 	firstName: { type: String, unique: false },
 	lastName: { type: String, unique: false },
   username: { type: String, unique: false, required: false },
+  phone: {type: String}, 
   password: { type: String, unique: false, required: false },
   owner: {type: Boolean, default: 0},
   appointments: [

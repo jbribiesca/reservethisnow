@@ -13,6 +13,7 @@ class Appointments extends Component {
     appointments: [],
     title: "",
     client: "",
+    phone: "",
     starttime: "",
     endtime: ""
   };
@@ -24,7 +25,7 @@ class Appointments extends Component {
   loadAppointments = () => {
     API.getAppointments()
       .then(res =>
-        this.setState({ appointments: res.data.appointments, title: "", client: "", starttime: "", endtime: "" })
+        this.setState({ appointments: res.data.appointments, title: "", client: "", phone: "", starttime: "", endtime: "" })
       )
       .catch(err => console.log(err));
   };
@@ -48,6 +49,7 @@ class Appointments extends Component {
       API.saveAppointment({
         title: this.state.title,
         client: this.state.client,
+        phone: this.state.phone,
         starttime: this.state.starttime,
         endtime: this.state.endtime
       })
@@ -76,6 +78,12 @@ class Appointments extends Component {
                 onChange={this.handleInputChange}
                 name="client"
                 placeholder="Client (required)"
+              />
+              <Input
+                value={this.state.phone}
+                onChange={this.handleInputChange}
+                name="phone"
+                placeholder="Phone (required)"
               />
               <TextArea
                 value={this.state.starttime}

@@ -17,6 +17,7 @@ class Appointments extends Component {
     appointments: [],
     title: "",
     client: "",
+    phone: "",
     starttime: "",
     endtime: ""
   };
@@ -53,6 +54,7 @@ class Appointments extends Component {
       API.saveClientAppointment({
         title: this.state.title,
         client: this.state.client,
+        phone: this.state.phone,
         starttime: this.state.starttime,
         endtime: this.state.endtime,
         id: this.state.users._id
@@ -85,6 +87,12 @@ class Appointments extends Component {
                             onChange={this.handleInputChange}
                             name="client"
                             placeholder="Client (required)"
+                          />
+                           <Input
+                            value={this.state.phone}
+                            onChange={this.handleInputChange}
+                            name="phone"
+                            placeholder="Phone (required)"
                           />
                           <TextArea
                             value={this.state.starttime}

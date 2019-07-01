@@ -14,7 +14,8 @@ class SignupForm extends Component {
       firstName: '',
       lastName: '',
 			username: '',
-			password: '',
+      password: '',
+      phone: '',
 			confirmPassword: '',
 			redirectTo: null
 		};
@@ -33,7 +34,8 @@ class SignupForm extends Component {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      phone: this.state.phone
     }).then(response => {
       // console.log(response);
       if (!response.data.errmsg) {
@@ -77,6 +79,13 @@ class SignupForm extends Component {
                   type="text"
                   name="username"
                   value={this.state.username}
+                  onChange={this.handleChange}
+                />
+                                <label htmlFor="phone">Phone: </label>
+                <Input
+                  type="text"
+                  name="phone"
+                  value={this.state.phone}
                   onChange={this.handleChange}
                 />
                 <label htmlFor="password">Password: </label>

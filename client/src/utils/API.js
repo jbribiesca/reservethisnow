@@ -18,6 +18,7 @@ export default {
     return axios.post("/api/appointments", appointmentsData);
   },
   saveClientAppointment: function(appointmentsData) {
-    return axios.post("/api/appointments", appointmentsData);
+    console.log(appointmentsData)
+    return axios.post("/api/appointments/client", appointmentsData);
   }
 };
