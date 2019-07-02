@@ -8,7 +8,9 @@ router.route("/")
   
 router.route("/client")
   .post(appointmentsController.clientCreate);
-// Matches with "/api/books/:id"
+
+router.route("/client/date")
+  .post(appointmentsController.findByDate);
 router
   .route("/:id")
   .get(appointmentsController.findById)

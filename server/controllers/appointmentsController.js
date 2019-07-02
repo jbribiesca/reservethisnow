@@ -33,6 +33,18 @@ module.exports = {
       return res.json({ appointment: null });
     }
   },
+  findByDate: function(req, res) {
+      console.log(req.body.date)
+      db.Appointment
+        .findOne({ date: req.body.date})
+        // .populate({ path: "appointments", options: { sort: { 'date': -1 } } })
+        .then(dbAppointments => {
+          res.json({ appointments: dbAppointments});
+        })
+        .catch(err => res.status(422).json(err));
+
+  },
+  
   create: function(req, res) {
     db.Appointment
       // console.log(req.body)
@@ -42,7 +54,7 @@ module.exports = {
           apiKey: "05f90f67",
           apiSecret: "rFVLUG2N3ml7U1Nw"
         });
-        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.starttime).format("MMMM Do YYYY, h:mm a").toString()
+        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.date).format("MMMM Do YYYY").toString()
     
         const from = "17149885310";
         const to = req.body.phone;
@@ -71,7 +83,7 @@ module.exports = {
           apiKey: "05f90f67",
           apiSecret: "rFVLUG2N3ml7U1Nw"
         });
-        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.starttime).format("MMMM Do YYYY, h:mm a").toString()
+        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.date).format("MMMM Do YYYY").toString() + " at " + req.body.time
     
         const from = "17149885310";
         const to = req.body.phone;

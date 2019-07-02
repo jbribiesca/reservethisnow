@@ -3,7 +3,7 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 // import Auth from "../../utils/AUTH";
 import { Container } from "../../components/Grid";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, Date, Time, FormBtn } from "../../components/Form";
 import Axios from "axios";
 
 
@@ -18,8 +18,8 @@ class Appointments extends Component {
     title: "",
     client: "",
     phone: "",
-    starttime: "",
-    endtime: ""
+    date: "",
+    time: ""
   };
 
   componentDidMount() {
@@ -55,8 +55,8 @@ class Appointments extends Component {
         title: this.state.title,
         client: this.state.client,
         phone: "1" + this.state.phone,
-        starttime: this.state.starttime,
-        endtime: this.state.endtime,
+        date: this.state.date,
+        time: this.state.time,
         id: this.state.users._id
       })
         .then()
@@ -94,15 +94,15 @@ class Appointments extends Component {
                             name="phone"
                             placeholder="Phone (required)"
                           />
-                          <TextArea
-                            value={this.state.starttime}
+                          <Date
+                            value={this.state.date}
                             onChange={this.handleInputChange}
-                            name="starttime"
+                            name="date"
                           />
-                          <TextArea
-                            value={this.state.endtime}
+                          <Time
+                            value={this.state.time}
                             onChange={this.handleInputChange}
-                            name="endtime"
+                            name="time"
                           />
                           <FormBtn
                             disabled={!(this.state.title && this.state.client)}

@@ -5,7 +5,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, Time, Date, FormBtn } from "../../components/Form";
 import moment from "moment";
 
 class Appointments extends Component {
@@ -14,8 +14,8 @@ class Appointments extends Component {
     title: "",
     client: "",
     phone: "",
-    starttime: "",
-    endtime: ""
+    date: "",
+    time: ""
   };
 
   componentDidMount() {
@@ -25,7 +25,7 @@ class Appointments extends Component {
   loadAppointments = () => {
     API.getAppointments()
       .then(res =>
-        this.setState({ appointments: res.data.appointments, title: "", client: "", phone: "", starttime: "", endtime: "" })
+        this.setState({ appointments: res.data.appointments, title: "", client: "", phone: "", date: "", time: "" })
       )
       .catch(err => console.log(err));
   };
@@ -50,8 +50,8 @@ class Appointments extends Component {
         title: this.state.title,
         client: this.state.client,
         phone: "1" + this.state.phone,
-        starttime: this.state.starttime,
-        endtime: this.state.endtime
+        date: this.state.date,
+        time: this.state.time
       })
         .then(res => this.loadAppointments())
         .catch(err => console.log(err));
@@ -85,15 +85,15 @@ class Appointments extends Component {
                 name="phone"
                 placeholder="Phone (required)"
               />
-              <TextArea
-                value={this.state.starttime}
+              <Date
+                value={this.state.date}
                 onChange={this.handleInputChange}
-                name="starttime"
+                name="date"
               />
-              <TextArea
-                value={this.state.endtime}
+              <Time
+                value={this.state.time}
                 onChange={this.handleInputChange}
-                name="endtime"
+                name="time"
               />
               <FormBtn
                 disabled={!(this.state.title && this.state.client)}
@@ -113,7 +113,7 @@ class Appointments extends Component {
                   <ListItem key={appointment._id}>
                     <Link to={"/appointments/" + appointment._id}>
                       <strong>
-                        {appointment.title} by {appointment.client} at {moment(appointment.starttime).format("MMMM Do YYYY, h:mm a").toString()}  - {moment(appointment.endtime).format("MMMM Do YYYY, h:mm a").toString()}
+                        {appointment.title} by {appointment.client} at {moment(appointment.date).format("MMMM Do YYYY").toString()}  - {moment(appointment.time).format("h:mm a").toString()}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteAppointment(appointment._id)} />
