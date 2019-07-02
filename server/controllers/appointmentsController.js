@@ -1,5 +1,7 @@
 const ObjectId = require("mongoose").Types.ObjectId;
 const db = require("../models");
+const Nexmo = require("nexmo");
+const moment = require("moment")
 
 
 // Defining methods for the booksController
@@ -36,6 +38,22 @@ module.exports = {
       // console.log(req.body)
       .create(req.body)
       .then(dbAppointment => {
+        const nexmo = new Nexmo({
+          apiKey: "05f90f67",
+          apiSecret: "rFVLUG2N3ml7U1Nw"
+        });
+        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.starttime).format("MMMM Do YYYY, h:mm a").toString()
+    
+        const from = "17149885310";
+        const to = req.body.phone;
+    
+        nexmo.message.sendSms(from, to, msg, (err, responseData) => {
+          if (err) {
+            console.log(err)
+          } else {
+            console.dir(responseData)
+          }
+        })
         return db.User.findOneAndUpdate({ _id: req.user._id }, { $push: { appointments: dbAppointment._id } }, { new: true });
       })
       .then((dbUser) => {
@@ -49,10 +67,27 @@ module.exports = {
       // console.log(req.body)
       .create(req.body)
       .then(dbAppointment => {
+        const nexmo = new Nexmo({
+          apiKey: "05f90f67",
+          apiSecret: "rFVLUG2N3ml7U1Nw"
+        });
+        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.starttime).format("MMMM Do YYYY, h:mm a").toString()
+    
+        const from = "17149885310";
+        const to = req.body.phone;
+    
+        nexmo.message.sendSms(from, to, msg, (err, responseData) => {
+          if (err) {
+            console.log(err)
+          } else {
+            console.dir(responseData)
+          }
+        })
         return db.User.findOneAndUpdate({ _id: req.body.id }, { $push: { appointments: dbAppointment._id } }, { new: true });
       })
       .then((dbUser) => {
         // If the User was updated successfully, send it back to the client
+
         res.json(dbUser);
       })
       .catch(err => res.status(422).json(err));

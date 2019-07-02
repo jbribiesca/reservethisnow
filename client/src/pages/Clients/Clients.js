@@ -54,7 +54,7 @@ class Appointments extends Component {
       API.saveClientAppointment({
         title: this.state.title,
         client: this.state.client,
-        phone: this.state.phone,
+        phone: "1" + this.state.phone,
         starttime: this.state.starttime,
         endtime: this.state.endtime,
         id: this.state.users._id
