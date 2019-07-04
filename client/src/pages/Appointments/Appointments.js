@@ -6,20 +6,23 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, Time, Date, FormBtn } from "../../components/Form";
+import AppointmentPicker from "../../components/AppointmentPicker";
 import moment from "moment";
 
 class Appointments extends Component {
   state = {
     appointments: [],
+    timestaken:[],
     title: "",
     client: "",
     phone: "",
     date: "",
-    time: ""
+    time: "",
   };
 
   componentDidMount() {
     this.loadAppointments();
+    this.loadDateTimes();
   }
 
   loadAppointments = () => {
@@ -28,7 +31,18 @@ class Appointments extends Component {
         this.setState({ appointments: res.data.appointments, title: "", client: "", phone: "", date: "", time: "" })
       )
       .catch(err => console.log(err));
+
   };
+
+  loadDateTimes = () => {
+    API.getAppointments()
+      .then(res =>
+        this.setState({ timestaken: res.data.appointments, time: "" }),
+      )
+      .catch(err => console.log(err));
+
+  };
+
 
   deleteAppointment = id => {
     API.deleteAppointment(id)
@@ -101,6 +115,7 @@ class Appointments extends Component {
               >
                 Submit Appointment
               </FormBtn>
+              <AppointmentPicker />
             </form>
           </Col>
           <Col size="md-6 sm-12">
