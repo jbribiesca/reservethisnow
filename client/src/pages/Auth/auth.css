@@ -1,0 +1,279 @@
+
+/* imported from google font to be able to use on CSS */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+/* CSS Variables */
+/* :root{
+  --primary-color: #b90415;
+  --primary-color-hover: #d3071b;
+  --secondary-color: #103063;
+  --secondary-color-hover: #143f85;
+  --light-color: #f4f4f4;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #252529;
+    margin: 0;
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  } */
+
+  .section-main{
+      color: #333;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  a{
+    text-decoration: none;
+    color: #ccc;
+  }
+
+  /* Section */
+  .section{
+    padding: 2rem 0;
+
+  }
+
+  .section-head{
+    font-size: 2.5rem;
+    margin: 0;
+
+  }
+
+  .section h3{
+    font-size: 2rem;
+
+  }
+
+  section#entertainment{
+    background: url(/images/world.jpg)no-repeat bottom/cover;
+    padding: 10rem 0;
+  }
+
+  .gift-cards{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+
+
+  /* Text Colors */
+  /* .text-primary{
+    color: var(--primary-color);  
+  }
+  .text-secondary{
+  color: var(--secondary-color);
+  }
+
+  .text-light{
+    color: var(--light-color);
+    }
+
+  .bg-light{
+    background: var(--light-color);
+    color: #333;
+    
+    } */
+
+  
+  /* Showcase */
+  #showcase{
+      margin: 0;
+      padding: 0;
+      background: url('/images/book.jpg') no-repeat center/cover;
+      width: 100%;
+      height: 100vh;
+      overflow-y: hidden;
+      
+  }
+
+  #showcase .container {
+    margin-top: 25vh;
+  }
+
+  #showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+
+  }
+
+  #showcase h2{
+    font-size: 2rem;
+  }
+
+
+
+  /* Utility Classes */
+  /* .container {
+    max-width: 1180px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 3rem;
+
+  } */
+
+  /* .lead {
+    font-size: 1.3rem
+  }
+
+    /* Button */
+    /* .btn{
+      padding: 1rem;
+      color: #fff;
+      display: inline-block;
+    }
+  
+    .btn-primary{
+      background: var(--primary-color);
+    }
+  
+    .btn-primary:hover{
+      background: var(--primary-color-hover);
+    }
+  
+    .btn-secondary{
+      background: var(--secondary-color);
+    }
+  
+    .btn-secondary:hover{
+      background: var(--secondary-color-hover);
+    }
+
+  .mb{
+    margin-bottom: 1rem;
+      }
+
+  .mt{
+    margin-top: 1rem;
+  } */ */
+
+
+  /*Navigation */
+  /* position: fixed makes nav bar always be visible and stay on top */
+  /* nav {
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    color: #eee;
+    position: fixed;
+  }
+  nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav li {
+    display: inline;
+    float: left;
+  }
+  nav a {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #eee;
+    text-decoration: none;
+  }
+  nav li:hover {
+    background-color: #444;
+  }
+  nav a#openup {
+    display: none;
+  } */
+
+
+
+
+
+
+
+/*Footer CSS*/
+
+.container {
+    flex: 1;    /* same as flex-grow: 1; */
+}
+
+.ft-main {
+    padding: 1.25rem 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ft-main-item {
+    padding: 1.25rem;
+    min-width: 12.5rem /*200px*/;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: ’Lato’, sans-serif;
+    margin: 0; 
+    padding: 0;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+footer {
+    background-color: #555;
+    color: #bbb;
+    line-height: 1.5;
+}
+footer a {
+    text-decoration: none;
+    color: #eee;
+}
+a:hover {
+    text-decoration: underline;
+}
+.ft-title {
+    color: #fff;
+    font-family: ’Merriweather’, serif;
+    font-size: 1.375rem;
+    padding-bottom: 0.625rem;
+}
+
+
+
+.ft-social {
+    padding: 0 1.875rem 1.25rem;
+}
+.ft-social-list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px #777 solid; 
+    padding-top: 1.25rem;
+}
+.ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+}
+
+
+/* Legal Footer*/
+.ft-legal {
+    padding: 0.9375rem 1.875rem;
+    background-color: #333;
+}
+.ft-legal-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ft-legal-list li {
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+}
+/* one before the last child */
+.ft-legal-list li:nth-last-child(2) {
+    flex: 1;       /* same as flex-grow: 1; */
+}
+
