@@ -12,33 +12,37 @@ class AppoPicker extends React.Component {
           mode: '12h',
           startTime: 9,
           endTime: 18,
-          disabled: ["9:00", "10:00"]
+          disabled: [...this.props.timestaken]
         };
-        this.state = { time: {} };
+        // this.state = { time: {} };
         this.pickerRef = React.createRef();
-        this.onTimeSelect = this.onTimeSelect.bind(this);
+        // this.onTimeSelect = this.onTimeSelect.bind(this);
     }
 
-    onTimeSelect(event) {
-        console.log('change.appo.picker', event.time);
-        this.setState({ time: event.time });
-        // Or do something different with your time object
-    }
+    // onTimeSelect(event) {
+    //     console.log('change.appo.picker', event.time);
+    //     this.setState({ time: event.time });
+    //     // Or do something different with your time object
+    // }
 
 	render() {
         return (
             <div>
+            <span>
+                {this.options.disabled}
+            </span>
                 <input type="text" ref={ this.pickerRef }></input>
             </div>);
 	}
 
     componentDidMount() {
     	this.picker = new AppointmentPicker(this.pickerRef.current, this.options);
-        this.pickerRef.current.addEventListener('change.appo.picker', this.onTimeSelect);
+        this.pickerRef.current.addEventListener('change.appo.picker', (event)=>this.props.onTimeSelect(event));
+        console.log (this.props.timestaken)
     }
 
     componentWillUnmount() {
-        this.pickerRef.current.removeEventListener('change.appo.picker', this.onTimeSelect);
+        this.pickerRef.current.removeEventListener('change.appo.picker', this.props.onTimeSelect);
         this.picker.destroy();
     }
 }
