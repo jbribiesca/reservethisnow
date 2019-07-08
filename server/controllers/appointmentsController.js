@@ -6,7 +6,7 @@ const moment = require("moment")
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
+  findAll: function (req, res) {
     if (req.user) {
       db.User
         .find({ _id: req.user._id })
@@ -19,7 +19,7 @@ module.exports = {
       return res.json({ appointments: null });
     }
   },
-  findById: function(req, res) {
+  findById: function (req, res) {
     if (req.user) {
       db.User
         .find({ _id: req.user._id })

@@ -10,19 +10,36 @@ import AppointmentPicker from "../../components/AppointmentPicker";
 import moment from "moment";
 
 class Appointments extends Component {
-  state = {
-    appointments: [],
-    timestaken:[],
+  // state = {
+  //   appointments: [],
+  //   timestaken:["12:00", "13:00"],
+  //   title: "",
+  //   client: "",
+  //   phone: "",
+  //   date: "",
+  //   time: "",
+  // };
+
+  constructor() {
+    super();
+    this.state={
+      appointments: [],
+    // timestaken:["12:00", "13:00"],
     title: "",
     client: "",
     phone: "",
     date: "",
     time: "",
-  };
+    };
+    this.onTimeSelect = this.onTimeSelect.bind(this);
+  }
+ 
 
-  componentDidMount() {
+  componentWillMount() {
+    console.log("hi")
     this.loadAppointments();
     this.loadDateTimes();
+
   }
 
   loadAppointments = () => {
@@ -37,7 +54,8 @@ class Appointments extends Component {
   loadDateTimes = () => {
     API.getAppointments()
       .then(res =>
-        this.setState({ timestaken: res.data.appointments, time: "" }),
+        {this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" })
+      console.log(this.state.timestaken)},
       )
       .catch(err => console.log(err));
 
@@ -57,6 +75,13 @@ class Appointments extends Component {
     });
   };
 
+  onTimeSelect(event) {
+    console.log('change.appo.picker', event.time);
+    this.setState({ time: `${event.time.h}:00` });
+    // Or do something different with your time object
+    
+}
+
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.client) {
@@ -67,7 +92,11 @@ class Appointments extends Component {
         date: this.state.date,
         time: this.state.time
       })
-        .then(res => this.loadAppointments())
+        .then(res => {
+          this.setState({timestaken:[]})
+          this.loadDateTimes()
+          this.loadAppointments()
+        })
         .catch(err => console.log(err));
     }
   };
@@ -104,18 +133,21 @@ class Appointments extends Component {
                 onChange={this.handleInputChange}
                 name="date"
               />
-              <Time
+              {/* <Time
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
-              />
+              /> */}
               <FormBtn
                 disabled={!(this.state.title && this.state.client)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Appointment
               </FormBtn>
-              <AppointmentPicker />
+              {this.state.timestaken ? <AppointmentPicker 
+                timestaken={this.state.timestaken}
+                onTimeSelect={this.onTimeSelect}
+              />:null}
             </form>
           </Col>
           <Col size="md-6 sm-12">

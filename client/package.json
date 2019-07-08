@@ -6,6 +6,7 @@
   "dependencies": {
     "appointment-picker": "^2.0.0",
     "axios": "^0.18.1",
+    "flatpickr": "^4.6.1",
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0",
     "react": "^16.0.0",
