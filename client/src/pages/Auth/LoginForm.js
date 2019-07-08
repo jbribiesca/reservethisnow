@@ -80,7 +80,7 @@ class LoginForm extends Component {
                                             <a href='/signup'>Register</a>
                                         </li>
                                         <li>
-                                            <a href='#login'>Login</a>
+                                            <a href='/login'>Login</a>
                                         </li>
                                         {/* <li>
                                     <a href='#video'>Features</a>
@@ -103,7 +103,7 @@ class LoginForm extends Component {
                             <div className="container">
                                 <h2 className="section-head">
                                     <i className="far fa-calendar-check"></i> Keep them coming back...</h2>
-                                <p className="lead hide-on-small">
+                                <p className="lead hide-on-small test">
                                     This Cloud-Base Calendar app allows you to book appointments on your phone, tablet, or computer
                                     for your personal or business needs.</p>
                                 <a href="/signup" className="btn btn-primary mb">Start Your Trial Now</a>
@@ -113,7 +113,7 @@ class LoginForm extends Component {
                         <section id="video" className="section bg-light">
                             <div className="container">
                                 <br></br>
-                                <h3>Now available on Android and iOS</h3>
+                                <h3><i class="fas fa-cart-arrow-down"></i> Now available on Android and iOS</h3>
                                 <p className="lead">Download the app for free on iTunes App Store or Google Play App Store.</p>
                                 <p><img src="/images/google.png" className='google' style={{ width: 160 }} alt=""></img><img src="/images/apple.png" className='apple'
                                     style={{ width: 150 }} alt=""></img></p>
@@ -126,7 +126,7 @@ class LoginForm extends Component {
                         {/* Worldwide Section */}
                         <section id="entertainment" className="section">
                             <div className="container">
-                                <h3>Available wherever you are 24/7</h3>
+                                <h3><i class="fas fa-globe-americas"></i> Available wherever you are 24/7 </h3>
                                 <p className="lead-text">Your personal, digital receptionist. Allow customers
                                  to book appointments anytime, day or night.</p>
                             </div>
@@ -139,7 +139,7 @@ class LoginForm extends Component {
                                         <img src="/images/booking.jpg" alt=""></img>
                                     </div>
                                     <div>
-                                        <h2>Send friendly text reminders!</h2>
+                                        <h2><i class="fas fa-sms"></i> Send friendly text reminders!</h2>
                                         <p>Forget calling your customers to remind them about appointments.
                                             Now you can reduce no-shows with text reminders of upcoming appointments
                                             and notify them of changes automatically via email or text.</p>
