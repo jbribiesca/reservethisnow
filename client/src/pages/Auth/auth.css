@@ -32,6 +32,7 @@ body {
     color: white;
     font-weight: bold;
     border: 3px solid #f1f1f1;
+    border-radius: 5px;
     position: absolute;
     top: 100%;
     left: 50%;
@@ -73,7 +74,12 @@ body {
   .section-head{
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #fff;
 
+  }
+
+  .test {
+    color: #fff;
   }
 
   .section h3{
