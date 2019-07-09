@@ -58,7 +58,7 @@ class LoginForm extends Component {
                                             value={this.state.password}
                                             onChange={this.handleChange}
                                         />
-                                        <Link to="/signup">Register</Link>
+                                        <Link to="/signup" className="auth-link">Not a member? Sign up</Link>
                                         <FormBtn onClick={this.handleSubmit}>Login</FormBtn>
                                     </form>
                                 </Card>
@@ -74,7 +74,7 @@ class LoginForm extends Component {
                                 <nav class='cf'>
                                     <ul class='cf'>
                                         <li class="hide-on-small">
-                                            <a href="#showcase">Reserve</a>
+                                            <a href="#showcase">Reserve This Now</a>
                                         </li>
                                         <li>
                                             <a href='/signup'>Register</a>
@@ -95,7 +95,7 @@ class LoginForm extends Component {
 
                         </div>
                         <div className="section-main container">
-                            <h1>Reserve This Now!</h1>
+                            <h1 className="brandName">Reserve This Now!</h1>
                             <h2 className="lead hide-on-small">Making appointments easy for you.</h2>
                         </div>
                         {/* Start Trial Section */}

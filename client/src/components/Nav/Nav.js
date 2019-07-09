@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Col } from '../Grid';
 import './Nav.css';
 
+
 const Nav = (props) => {
   let greeting;
 
@@ -25,7 +26,7 @@ const Nav = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <Col size="md-2">
-        <Link to="/" className="navbar-brand">Reserve This Now</Link>
+        <Link to="/" className="brandName">Reserve This Now</Link>
       </Col>
       <Col size="md-7"></Col>
       <Col size="md-3">
