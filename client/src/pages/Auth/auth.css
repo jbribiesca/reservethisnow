@@ -2,6 +2,7 @@
 /* imported from google font to be able to use on CSS */
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
 /* CSS Variables */
@@ -18,7 +19,7 @@
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
     background-color: #252529;
     margin: 0;
     color: #fff;
@@ -36,7 +37,7 @@ body {
     border: 3px solid #f1f1f1;
     border-radius: 5px;
     position: absolute;
-    top: 100%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -201,14 +202,14 @@ body {
   /*Navigation */
   /* position: fixed makes nav bar always be visible and stay on top */
   nav {
-    height: 40px;
+    height: 60px;
     width: 100%;
     background-color: #333;
     color: #eee;
     
   }
   nav ul {
-    padding: 0;
+    padding-top: 10px;
     margin: 0;
   }
   nav li {

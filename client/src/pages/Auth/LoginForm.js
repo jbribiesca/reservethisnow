@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { Container, Row, Col } from '../../components/Grid';
 import { Card } from '../../components/Card';
 import { Input, FormBtn } from '../../components/Form';
-import styles from './auth.css'
+import styles from './auth.css';
 
 
 class LoginForm extends Component {
@@ -37,35 +37,6 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
-                    <Container>
-                        <Row>
-                            <Col size="md-3"></Col>
-                            <Col size="md-6">
-                                <Card title="Login to Reserve This Now">
-                                    <form style={{ marginTop: 10 }}>
-                                        <label htmlFor="username">Username: </label>
-                                        <Input
-                                            type="text"
-                                            name="username"
-                                            value={this.state.username}
-                                            onChange={this.handleChange}
-                                        />
-                                        <label htmlFor="password">Password: </label>
-                                        <Input
-                                            type="password"
-                                            name="password"
-                                            value={this.state.password}
-                                            onChange={this.handleChange}
-                                        />
-                                        <Link to="/signup" className="auth-link">Not a member? Sign up</Link>
-                                        <FormBtn onClick={this.handleSubmit}>Login</FormBtn>
-                                    </form>
-                                </Card>
-                            </Col>
-                            <Col size="md-3"></Col>
-                        </Row>
-                    </Container>
 
                     <div>
                         <div id="showcase">
@@ -80,7 +51,31 @@ class LoginForm extends Component {
                                             <a href='/signup'>Register</a>
                                         </li>
                                         <li>
-                                            <a href='/login'>Login</a>
+                                            <a href='/'>Login: </a>
+                                        </li>
+                                         <li>
+                                        <Input
+                                            type="text"
+                                            name="username"
+                                            value={this.state.username}
+                                            onChange={this.handleChange}/></li>
+                                        
+                                            
+                                        <li>
+                                            <label htmlFor="password">Password: </label>
+                                            </li>
+                                        <li>
+                                        <Input
+                                            type="password"
+                                            name="password"
+                                            value={this.state.password}
+                                            onChange={this.handleChange}/>
+                                            </li>
+                                            <li>
+                                        <Link to="/signup">Register</Link>
+                                        </li>
+                                        <li>
+                                        <FormBtn onClick={this.handleSubmit}>Login</FormBtn>
                                         </li>
                                         {/* <li>
                                     <a href='#video'>Features</a>
@@ -212,7 +207,7 @@ class LoginForm extends Component {
                             </section>
                         </footer>
                     </div>
-                </div>
+                
             )
         }
     }
