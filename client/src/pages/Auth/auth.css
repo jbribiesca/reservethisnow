@@ -1,8 +1,9 @@
 
 /* imported from google font to be able to use on CSS */
-/* @import url('https://fonts.googleapis.com/css?family=PT+Sans'); */
-
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 
 /* CSS Variables */
 :root{
@@ -433,3 +434,17 @@ a:hover {
 .cf {
   zoom: 1;
 }
+
+/* Onix Styling Adjustments */
+/* ------------------------------ */
+.brandName {
+  font-family: 'Unica One', cursive;
+  font-size: 18px;
+}
+.auth-link {
+  color: #EB6864;
+}
+
+
+
+/* ============================== */

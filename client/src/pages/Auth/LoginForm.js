@@ -37,8 +37,6 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                
-                    
 
                     <div>
                         <div id="showcase">
@@ -47,7 +45,7 @@ class LoginForm extends Component {
                                 <nav class='cf'>
                                     <ul class='cf'>
                                         <li class="hide-on-small">
-                                            <a href="#showcase">Reserve</a>
+                                            <a href="#showcase">Reserve This Now</a>
                                         </li>
                                         <li>
                                             <a href='/signup'>Register</a>
@@ -92,7 +90,7 @@ class LoginForm extends Component {
 
                         </div>
                         <div className="section-main container">
-                            <h1>Reserve This Now!</h1>
+                            <h1 className="brandName">Reserve This Now!</h1>
                             <h2 className="lead hide-on-small">Making appointments easy for you.</h2>
                         </div>
                         {/* Start Trial Section */}
