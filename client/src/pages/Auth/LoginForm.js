@@ -45,35 +45,45 @@ class LoginForm extends Component {
                                 <nav class='cf'>
                                     <ul class='cf'>
                                         <li class="hide-on-small">
-                                            <a href="#showcase">Reserve This Now</a>
+                                            <a href="#showcase" className="brandName brandName-a">Reserve This Now</a>
                                         </li>
-                                        <li>
+                                        
+                                        {/*<li>
                                             <a href='/signup'>Register</a>
                                         </li>
                                         <li>
                                             <a href='/'>Login: </a>
-                                        </li>
-                                         <li>
+                                        </li>*/}
+
+                                         <li className="adjustForm">
                                         <Input
                                             type="text"
                                             name="username"
+                                            placeholder="Email"
+                                            
                                             value={this.state.username}
-                                            onChange={this.handleChange}/></li>
+                                            onChange={this.handleChange}/>
+                                        </li>
                                         
                                             
-                                        <li>
-                                            <label htmlFor="password">Password: </label>
-                                            </li>
-                                        <li>
+                                        {/* <li>
+                                             <label htmlFor="password">Password: </label>
+                                        </li>*/}
+                                         <li className="adjustForm">
                                         <Input
                                             type="password"
                                             name="password"
+                                            placeholder="Password"
                                             value={this.state.password}
                                             onChange={this.handleChange}/>
                                             </li>
                                             
                                         <li>
                                         <SplashBtn onClick={this.handleSubmit}>Login</SplashBtn>
+                                        </li>
+
+                                        <li>
+                                        <Link to="/signup">Register</Link>
                                         </li>
                                         {/* <li>
                                     <a href='#video'>Features</a>
