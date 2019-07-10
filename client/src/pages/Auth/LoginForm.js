@@ -45,7 +45,7 @@ class LoginForm extends Component {
                                 <nav class='cf'>
                                     <ul class='cf'>
                                         <li class="hide-on-small">
-                                            <a href="#showcase" className="brandName brandName-a">Reserve This Now</a>
+                                            <a href="#showcase" className="brandName brandName-a">Reserve This Now!</a>
                                         </li>
                                         
                                         {/*<li>
@@ -98,7 +98,7 @@ class LoginForm extends Component {
 
                         </div>
                         <div className="section-main container">
-                            <h1 className="brandName">Reserve This Now!</h1>
+                            <h1 className="brandName">Reserve This Now</h1>
                             <h2 className="lead hide-on-small">Making appointments easy for you.</h2>
                         </div>
                         {/* Start Trial Section */}
@@ -128,9 +128,9 @@ class LoginForm extends Component {
                         </section>
                         {/* Worldwide Section */}
                         <section id="entertainment" className="section">
-                            <div className="container">
+                            <div className="subsection container">
                                 <h3><i class="fas fa-globe-americas"></i> Available wherever you are 24/7 </h3>
-                                <p className="lead-text">Your personal, digital receptionist. Allow customers
+                                <p className="lead hide-on-small">Your personal, digital receptionist. Allow customers
                                  to book appointments anytime, day or night.</p>
                             </div>
                         </section>
