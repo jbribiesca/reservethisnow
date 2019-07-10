@@ -108,7 +108,7 @@ class Appointments extends Component {
                             disabled={!(this.state.title && this.state.client)}
                             onClick={this.handleFormSubmit}
                           >
-                            Submit Appointment
+                          <span class="fas fa-calendar-check"></span>
                           </FormBtn>
                         </form>
                         </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { Container, Row, Col } from '../../components/Grid';
 import { Card } from '../../components/Card';
-import { Input, FormBtn } from '../../components/Form';
+import { Input, SplashBtn } from '../../components/Form';
 import styles from './auth.css';
 
 
@@ -71,11 +71,9 @@ class LoginForm extends Component {
                                             value={this.state.password}
                                             onChange={this.handleChange}/>
                                             </li>
-                                            <li>
-                                        <Link to="/signup">Register</Link>
-                                        </li>
+                                            
                                         <li>
-                                        <FormBtn onClick={this.handleSubmit}>Login</FormBtn>
+                                        <SplashBtn onClick={this.handleSubmit}>Login</SplashBtn>
                                         </li>
                                         {/* <li>
                                     <a href='#video'>Features</a>

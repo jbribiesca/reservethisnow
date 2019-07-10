@@ -444,6 +444,18 @@ a:hover {
   color: #EB6864;
 }
 
+.splashBtn {
+  background-color: transparent;
+  padding: 1rem;
+  color: #fff;
+  display: inline-block;
+  border-color: white;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 0.25rem;
+  margin-left: 10px;
+}
+
 
 
 /* ============================== */
