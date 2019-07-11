@@ -27,9 +27,9 @@ npm start dev
 
 ## Landing Website Overview
 
-Explain how to run the automated tests for this system
 
-<insert picture here>
+![website](https://user-images.githubusercontent.com/46248532/61089733-b891db80-a401-11e9-95e3-77c1527dcd25.png)
+
 
 ### Registering
 
