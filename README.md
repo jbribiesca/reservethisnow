@@ -52,7 +52,7 @@ How to register into our app...
 
 ## Contributors
 
-* Jose Torres -  Front-End [jt227b](https://github.com/jt227b) Front-End
+* Jose Torres -  [jt227b](https://github.com/jt227b) Front-End
 * Onix Castro-  [onix-xcc](https://github.com/onix-xcc) Front-End
 * Jerry Bribiesca -  [jbribiesca](https://github.com/jbribiesca) Back-End
 * Shane Gove -  [smgove](https://github.com/smgove) Back-End
