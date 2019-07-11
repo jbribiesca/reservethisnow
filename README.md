@@ -28,7 +28,11 @@ npm start dev
 ## Landing Website Overview
 
 
+Explain how to run the automated tests for this system
+
+
 ![website](https://user-images.githubusercontent.com/46248532/61089733-b891db80-a401-11e9-95e3-77c1527dcd25.png)
+
 
 
 ### Registering
@@ -37,10 +41,16 @@ npm start dev
 How to register into our app...
 ```
 <insert picture here>
+
+
+
+## Deployment
+
 <insert picture here>
 
 
 ## Deployment 
+
 
 
 
@@ -52,6 +62,9 @@ How to register into our app...
 
 ## Contributors
 
+
+
+
 * Jose Torres -  [jt227b](https://github.com/jt227b) Front-End
 * Onix Castro-  [onix-xcc](https://github.com/onix-xcc) Front-End
 * Jerry Bribiesca -  [jbribiesca](https://github.com/jbribiesca) Back-End
@@ -59,6 +72,8 @@ How to register into our app...
 
 
 
+
 ## Acknowledgments
 
 * "The wisest mind has something yet to learn."
+
