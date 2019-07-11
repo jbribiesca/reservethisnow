@@ -384,6 +384,13 @@ a:hover {
     display: none;
   }
 
+  .section-main {
+    
+    top: 30%;
+    padding: 11px;
+    
+  }
+
   #showcase {
     height: 50vh;
 
