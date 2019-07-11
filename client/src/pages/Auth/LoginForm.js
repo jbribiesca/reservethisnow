@@ -100,8 +100,11 @@ class LoginForm extends Component {
 
                         </div>
                         <div className="section-main container">
+                        <br className="lead hide-on-small"></br>
                             <h1 className="brandName">Reserve This Now</h1>
                             <h2 className="lead hide-on-small">Making appointments easy for you.</h2>
+                            <p className="lead hide-on-small"><i class="far fa-calendar-alt fa-3x"></i></p>
+                            <br className="lead hide-on-small"></br>
                         </div>
                         {/* Start Trial Section */}
                         <section id="music" className="section">
