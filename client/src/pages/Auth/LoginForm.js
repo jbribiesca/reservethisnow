@@ -45,7 +45,7 @@ class LoginForm extends Component {
                                 <nav class='cf'>
                                     <ul class='cf'>
                                         <li class="hide-on-small">
-                                            <a href="#showcase" className="brandName brandName-a">Reserve This Now!</a>
+                                            <a href="#showcase" className="brandName brandName-a">Reserve This Now</a>
                                         </li>
                                         
                                         {/*<li>
@@ -62,15 +62,14 @@ class LoginForm extends Component {
                                             type="text"
                                             name="username"
                                             placeholder="Username"
-                                            
                                             value={this.state.username}
                                             onChange={this.handleChange}/>
                                         </li>
-                                        
-                                            
+                                                                          
                                         {/* <li>
                                              <label htmlFor="password">Password: </label>
                                         </li>*/}
+
                                          <li className="adjustForm">
                                         <Input
                                             type="password"
@@ -95,7 +94,7 @@ class LoginForm extends Component {
                                     <a href='#gift-cards'>Stream</a>
                                 </li> */}
                                     </ul>
-                                    <a href='/' id='openup'>Reserve</a>
+                                    <a href='/' id='openup' className="brandName brandName-a">Reserve This Now</a>
                                 </nav>
                             </header>
 

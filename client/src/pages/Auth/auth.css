@@ -297,7 +297,7 @@ footer a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #969696;
 }
 
 .ft-title {
@@ -401,11 +401,6 @@ a:hover {
   #showcase h2 {
     font-size: 1.5rem;
   }
-
-
-
-
-
 
   nav {
     height: auto;
