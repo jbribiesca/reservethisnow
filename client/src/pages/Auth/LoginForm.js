@@ -55,6 +55,8 @@ class LoginForm extends Component {
                                             <a href='/'>Login: </a>
                                         </li>*/}
 
+                                        <div className="float-right">
+
                                          <li className="adjustForm">
                                         <Input
                                             type="text"
@@ -85,6 +87,7 @@ class LoginForm extends Component {
                                         <li>
                                         <Link to="/signup">Register</Link>
                                         </li>
+                                        </div>
                                         {/* <li>
                                     <a href='#video'>Features</a>
                                 </li>
