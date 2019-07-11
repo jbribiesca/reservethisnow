@@ -6,6 +6,7 @@ import { Input, SplashBtn } from '../../components/Form';
 import styles from './auth.css';
 
 
+
 class LoginForm extends Component {
 
     constructor() {
@@ -134,7 +135,7 @@ class LoginForm extends Component {
                         {/* Worldwide Section */}
                         <section id="entertainment" className="section">
                             <div className="subsection container">
-                                <h3><i class="fas fa-globe-americas"></i> Available wherever you are 24/7 </h3>
+                                <h3><i class="fas fa-globe-americas"></i> Available <span className="hide-on-small">wherever you are</span> 24/7 </h3>
                                 <p className="lead hide-on-small">Your personal, digital receptionist. Allow customers
                                  to book appointments anytime, day or night.</p>
                             </div>
@@ -202,10 +203,11 @@ class LoginForm extends Component {
 
                             <section className="ft-social">
                                 <ul className="ft-social-list">
-                                    <li><a href="#"><i className="fab fa-facebook"></i></a></li>
+                                    {/* Enter barber website in href "#" inside globe */}
+                                    <li><a href="#"><i className="fas fa-globe"></i></a></li> 
                                     <li><a href="#"><i className="fab fa-twitter"></i></a></li>
                                     <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i className="fab fa-github"></i></a></li>
+                                    <li><a href="https://github.com/jbribiesca/testingproject3.git"><i className="fab fa-github"></i></a></li>
                                     <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
                                     <li><a href="#"><i className="fab fa-youtube"></i></a></li>
                                 </ul>
