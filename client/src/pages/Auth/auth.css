@@ -412,6 +412,7 @@ a:hover {
   nav {
     height: auto;
     border-bottom: 0;
+    padding: 10px;
   }
 
   nav ul {
@@ -430,7 +431,7 @@ a:hover {
     width: 100%;
     text-indent: 25px;
     background: #333;
-    border-bottom: 1px solid #555;
+    
   }
 
   nav a:hover {
@@ -449,7 +450,7 @@ a:hover {
     display: inline-block;
     position: absolute;
     right: 5px;
-    top: 20px;
+    top: 15px;
   }
 
   nav a#openup {
@@ -511,5 +512,7 @@ a:hover {
   color: white;
   border: 3px solid #f1f1f1;
   border-radius: 5px;
+  width: 80%;
+  padding: 20px;
 }
 /* ============================== */
