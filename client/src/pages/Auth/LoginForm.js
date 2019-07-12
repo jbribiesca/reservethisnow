@@ -204,7 +204,7 @@ class LoginForm extends Component {
                             <section className="ft-social">
                                 <ul className="ft-social-list">
                                     {/* Enter barber website in href "#" inside globe */}
-                                    <li><a href="#"><i className="fas fa-globe"></i></a></li> 
+                                    <li><a href="https://jt227b.github.io/Barbershop/" target="_blank"><i className="fas fa-globe"></i></a></li> 
                                     <li><a href="#"><i className="fab fa-twitter"></i></a></li>
                                     <li><a href="#"><i className="fab fa-instagram"></i></a></li>
                                     <li><a href="https://github.com/jbribiesca/testingproject3.git"><i className="fab fa-github"></i></a></li>
