@@ -1,11 +1,23 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
 }
 /* Inside Appointment Styling */
 .main-view{
-  background-color: pink;
+  background-color: #f4f4f4;
+  
 }
 
+.jumbotron {
+  margin-top: 20px;
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: 3px solid #f1f1f1;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
