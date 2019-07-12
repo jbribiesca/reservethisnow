@@ -8,6 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, Time, Date, FormBtn } from "../../components/Form";
 import AppointmentPicker from "../../components/AppointmentPicker";
 import moment from "moment";
+import axios from "axios";
 
 class Appointments extends Component {
   // state = {
@@ -32,14 +33,26 @@ class Appointments extends Component {
     time: "",
     };
     this.onTimeSelect = this.onTimeSelect.bind(this);
+    this.onDateSelect = this.onDateSelect.bind(this)
   }
  
 
   componentWillMount() {
-    console.log("hi")
     this.loadAppointments();
     this.loadDateTimes();
 
+  }
+
+  onDateSelect(){
+    let date = this.state.date
+    
+    axios.get("/api/appointments/date/" + date)
+    .then(res =>
+      {console.log(res)
+        this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" })
+    console.log(this.state.timestaken)},
+    )
+    .catch(err => console.log(err));
   }
 
   loadAppointments = () => {
@@ -54,8 +67,11 @@ class Appointments extends Component {
   loadDateTimes = () => {
     API.getAppointments()
       .then(res =>
-        {this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" })
-      console.log(this.state.timestaken)},
+      
+        {
+          this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" })
+      // console.log(this.state.timestaken)
+    },
       )
       .catch(err => console.log(err));
 
@@ -131,6 +147,7 @@ class Appointments extends Component {
               <Date
                 value={this.state.date}
                 onChange={this.handleInputChange}
+                onBlur={this.onDateSelect}
                 name="date"
               />
               {/* <Time

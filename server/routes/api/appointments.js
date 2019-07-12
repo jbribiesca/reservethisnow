@@ -5,6 +5,9 @@ const appointmentsController = require("../../controllers/appointmentsController
 router.route("/")
   .get(appointmentsController.findAll)
   .post(appointmentsController.create);
+
+router.route("/date/:date")
+  .get(appointmentsController.findAllDate)
   
 router.route("/client")
   .post(appointmentsController.clientCreate);

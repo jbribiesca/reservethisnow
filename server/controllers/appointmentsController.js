@@ -9,12 +9,29 @@ module.exports = {
   findAll: function (req, res) {
     if (req.user) {
       db.User
-        .find({ _id: req.user._id })
+        .find({ _id: req.user._id})
         .populate({ path: "appointments", options: { sort: { 'date': -1 } } })
         .then(users => {
           res.json({ appointments: users[0].appointments });
         })
         .catch(err => res.status(422).json(err));
+    } else {
+      return res.json({ appointments: null });
+    }
+  },
+  findAllDate: function (req, res) {
+    if (req.user) {
+      let date = new Date(req.params.date).toISOString()
+      db.User
+        .find({ _id: req.user._id })
+        .populate({ path: "appointments",
+         match: {date: date},
+         options: { sort: { 'date': -1 } } })
+        .then(users => {
+          res.json({ appointments: users[0].appointments });
+        })
+        .catch(err => {console.log(err)
+          res.status(422).json(err)});
     } else {
       return res.json({ appointments: null });
     }

@@ -5,6 +5,9 @@ export default {
   getAppointments: function() {
     return axios.get("/api/appointments");
   },
+  getAppointmentsDate: function(date) {
+    return axios.get("/api/appointments/date/" + date);
+  },
   // Gets the book with the given id
   getAppointment: function(id) {
     return axios.get("/api/appointments/" + id);
