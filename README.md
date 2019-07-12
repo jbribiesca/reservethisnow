@@ -41,6 +41,7 @@ Explain how to run the automated tests for this system
 How to register into our app...
 ```
 <insert picture here>
+<insert picture here>
 
 
 
@@ -69,7 +70,6 @@ How to register into our app...
 * Onix Castro-  [onix-xcc](https://github.com/onix-xcc) Front-End
 * Jerry Bribiesca -  [jbribiesca](https://github.com/jbribiesca) Back-End
 * Shane Gove -  [smgove](https://github.com/smgove) Back-End
-
 
 
 
