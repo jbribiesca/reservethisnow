@@ -23,7 +23,7 @@
 
 .pick {
   right: 1%;
-  background: #43A047;
+  background: orangered;
 }
 
 .pick::after {
