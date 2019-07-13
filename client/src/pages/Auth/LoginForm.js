@@ -148,7 +148,7 @@ class LoginForm extends Component {
                                         <img src="/images/booking.jpg" alt=""></img>
                                     </div>
                                     <div>
-                                        <h2><i class="fas fa-sms"></i> Send friendly text reminders!</h2>
+                                        <h2 className="sms-Text"><i class="fas fa-sms"></i> Send friendly text reminders!</h2>
                                         <p>Forget calling your customers to remind them about appointments.
                                             Now you can reduce no-shows with text reminders of upcoming appointments
                                             and notify them of changes automatically via email or text.</p>

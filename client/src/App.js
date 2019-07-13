@@ -94,7 +94,7 @@ class App extends Component {
 	                           {/* Footer Section */}
 						  <footer>
                             <section className="ft-main">
-                                <div className="ft-main-item">
+                                <div className="ft-main-item" className="lead hide-on-small test">
                                     <h2 className="ft-title">About</h2>
                                     <ul>
                                         <li><a href="#">Services</a></li>
@@ -104,7 +104,7 @@ class App extends Component {
                                         <li><a href="#">Careers</a></li>
                                     </ul>
                                 </div>
-                                <div className="ft-main-item">
+                                <div className="ft-main-item" className="lead hide-on-small test">
                                     <h2 className="ft-title">Resources</h2>
                                     <ul>
                                         <li><a href="#">Docs</a></li>
@@ -113,7 +113,7 @@ class App extends Component {
                                         <li><a href="#">Webinars</a></li>
                                     </ul>
                                 </div>
-                                <div className="ft-main-item">
+                                <div className="ft-main-item" className="lead hide-on-small test">
                                     <h2 className="ft-title">Contact</h2>
                                     <ul>
                                         <li><a href="#">Help</a></li>
