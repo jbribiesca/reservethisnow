@@ -385,10 +385,20 @@ a:hover {
   }
 
   .section-main {
-    
+
     top: 30%;
     padding: 11px;
-    
+
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  .google, .apple {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 150px;
   }
 
   #showcase {
@@ -446,7 +456,7 @@ a:hover {
     width: 100%;
     text-indent: 25px;
     background: #333;
-    
+
   }
 
   nav a:hover {
@@ -530,4 +540,5 @@ a:hover {
   width: 80%;
   padding: 20px;
 }
+
 /* ============================== */
