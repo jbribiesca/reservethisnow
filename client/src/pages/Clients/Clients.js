@@ -30,6 +30,7 @@ class Appointments extends Component {
     this.onDateSelect = this.onDateSelect.bind(this)
   }
 
+  
 
 
   componentDidMount() {
