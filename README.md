@@ -25,7 +25,7 @@ npm start dev
 ```
 
 
-## Landing Website Overview
+## Website Overview
 
 
 Explain how to run the automated tests for this system
