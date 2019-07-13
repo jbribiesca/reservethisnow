@@ -73,7 +73,7 @@ class Appointments extends Component {
                           <div>
                           <Jumbotron>
                           <h1>Schedule an appointment!</h1>
-                          <h2>With {this.state.users.firstName} {this.state.users.lastName}</h2>
+                          <h2>For {this.state.users.firstName} {this.state.users.lastName}</h2>
                         </Jumbotron>
                         <form>
                           <Input
