@@ -112,7 +112,7 @@ class Appointments extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Schedule an appointment!</h1>
+              <h1>Schedule <i class="far fa-clock"></i></h1>
             </Jumbotron>
             <form>
               <Input
@@ -153,7 +153,7 @@ class Appointments extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Appointments on my list</h1>
+              <h1>Appointments <i class="fas fa-list-alt"></i></h1>
             </Jumbotron>
             {this.state.appointments.length ? (
               <List>
@@ -169,7 +169,7 @@ class Appointments extends Component {
                 ))}
               </List>
             ) : (
-                <h3>No Results to Display</h3>
+                <h3 className="upcoming-appointments">Upcoming Appointments</h3>
               )}
           </Col>
         </Row>
