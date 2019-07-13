@@ -86,7 +86,7 @@ class App extends Component {
             <Route exact path="/" component={() => <LoginForm login={this.login}/>} />
             <Route exact path="/appointments" component={() => <LoginForm user={this.login}/>} />
             <Route exact path="/signup" component={SignupForm} />
-			<Route path="/:id" component={Clients} />
+			      <Route path="/:id" component={Clients} />
 			</Switch>
           </div>
 	   )}
