@@ -87,7 +87,7 @@ module.exports = {
           apiKey: "05f90f67",
           apiSecret: "rFVLUG2N3ml7U1Nw"
         });
-        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.date).format("MMMM Do YYYY").toString()
+        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.date).format("MMMM Do YYYY").toString() + " at " + moment(req.body.time, "HH:mm a").format("h:mm a")
     
         const from = "17149885310";
         const to = req.body.phone;
@@ -116,7 +116,7 @@ module.exports = {
           apiKey: "05f90f67",
           apiSecret: "rFVLUG2N3ml7U1Nw"
         });
-        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.date).format("MMMM Do YYYY").toString() + " at " + req.body.time
+        let msg = req.body.client + " you are confirmed for your " + req.body.title + " on " + moment(req.body.date).format("MMMM Do YYYY").toString() + " at " + moment(req.body.time, "HH:mm a").format("h:mm a")
     
         const from = "17149885310";
         const to = req.body.phone;

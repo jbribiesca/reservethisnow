@@ -14,12 +14,12 @@ class AppoPicker extends React.Component {
           startTime: 9,
           endTime: 18,
           disabled: [...this.props.timestaken],
+          title: "Available Slots"
         };
         // this.state = { time: {} };
         this.pickerRef = React.createRef();
         // this.onTimeSelect = this.onTimeSelect.bind(this);
     }
-
     // onTimeSelect(event) {
     //     console.log('change.appo.picker', event.time);
     //     this.setState({ time: event.time });

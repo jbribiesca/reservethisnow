@@ -159,7 +159,7 @@ class Appointments extends Component {
                   <ListItem key={appointment._id}>
                     <Link to={"/appointments/" + appointment._id}>
                       <strong>
-                        {appointment.title} by {appointment.client} at {moment(appointment.date).add(1, 'days').format("MMMM Do YYYY").toString()}  - {appointment.time}
+                        {appointment.title} by {appointment.client} at {moment(appointment.date).add(1, 'days').format("MMMM Do YYYY").toString()}  - {moment(appointment.time, "HH:mm a").format("h:mm a")}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteAppointment(appointment._id)} />
