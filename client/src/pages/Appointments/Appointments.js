@@ -31,6 +31,7 @@ class Appointments extends Component {
     phone: "",
     date: "",
     time: "",
+    timestaken: ""
     };
     this.onTimeSelect = this.onTimeSelect.bind(this);
     this.onDateSelect = this.onDateSelect.bind(this)
@@ -39,18 +40,17 @@ class Appointments extends Component {
 
   componentWillMount() {
     this.loadAppointments();
-    this.loadDateTimes();
 
   }
 
   onDateSelect(){
     let date = this.state.date
-    
     axios.get("/api/appointments/date/" + date)
     .then(res =>
-      {console.log(res)
-        this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" })
-    console.log(this.state.timestaken)},
+      {
+        this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" });
+        console.log(this.state.timestaken)
+      },
     )
     .catch(err => console.log(err));
   }
@@ -64,18 +64,7 @@ class Appointments extends Component {
 
   };
 
-  loadDateTimes = () => {
-    API.getAppointments()
-      .then(res =>
-      
-        {
-          this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" })
-      // console.log(this.state.timestaken)
-    },
-      )
-      .catch(err => console.log(err));
 
-  };
 
 
   deleteAppointment = id => {
@@ -150,11 +139,6 @@ class Appointments extends Component {
                 onBlur={this.onDateSelect}
                 name="date"
               />
-              {/* <Time
-                value={this.state.time}
-                onChange={this.handleInputChange}
-                name="time"
-              /> */}
               <FormBtn
                 disabled={!(this.state.title && this.state.client)}
                 onClick={this.handleFormSubmit}

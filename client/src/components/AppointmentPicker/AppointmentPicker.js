@@ -5,6 +5,7 @@ import '../../../node_modules/appointment-picker/dist/appointment-picker.css';
 
 class AppoPicker extends React.Component {
 
+
     constructor(props) {
         super(props);
         this.options = {
@@ -12,7 +13,7 @@ class AppoPicker extends React.Component {
           mode: '12h',
           startTime: 9,
           endTime: 18,
-          disabled: [...this.props.timestaken]
+          disabled: [...this.props.timestaken],
         };
         // this.state = { time: {} };
         this.pickerRef = React.createRef();
@@ -28,9 +29,7 @@ class AppoPicker extends React.Component {
 	render() {
         return (
             <div>
-            <span>
-                {this.options.disabled}
-            </span>
+
                 <input type="text" ref={ this.pickerRef }></input>
             </div>);
 	}
@@ -38,13 +37,19 @@ class AppoPicker extends React.Component {
     componentDidMount() {
     	this.picker = new AppointmentPicker(this.pickerRef.current, this.options);
         this.pickerRef.current.addEventListener('change.appo.picker', (event)=>this.props.onTimeSelect(event));
-        console.log (this.props.timestaken)
     }
 
     componentWillUnmount() {
         this.pickerRef.current.removeEventListener('change.appo.picker', this.props.onTimeSelect);
         this.picker.destroy();
     }
+   
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps.timestaken)
+        this.options.timestaken = nextProps.timestaken
+       
+      }
+      
 }
 
 export default AppoPicker;
