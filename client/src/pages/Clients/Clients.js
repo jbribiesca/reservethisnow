@@ -6,7 +6,19 @@ import { Container } from "../../components/Grid";
 import { Input, Date, Time, FormBtn } from "../../components/Form";
 import Axios from "axios";
 import AppointmentPicker from "../../components/AppointmentPicker";
+import Modal from 'react-modal';
+import moment from 'moment'
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 class Appointments extends Component {
 
@@ -24,13 +36,30 @@ class Appointments extends Component {
       phone: "",
       date: "",
       time: "",
-      timestaken: ""
+      timestaken: "",
+      modalIsOpen: false
     };
     this.onTimeSelect = this.onTimeSelect.bind(this);
     this.onDateSelect = this.onDateSelect.bind(this)
+
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+
   }
 
-  
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+ 
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = 'black';
+  }
+ 
+  closeModal() {
+    this.setState({modalIsOpen: false, title: "", client: "", phone: "", date: "", time: ""});
+  }
 
 
   componentDidMount() {
@@ -91,7 +120,9 @@ class Appointments extends Component {
         time: this.state.time,
         id: this.state.users._id
       })
-        .then()
+        .then(res => {
+          this.setState({modalIsOpen: true})
+        })
         .catch(err => console.log(err));
     }
   };
@@ -101,11 +132,12 @@ class Appointments extends Component {
       <Container fluid>
 
           <div>
+            <p style={{color: 'white', textAlign: 'center'}}>Are you the business owner? Login <a href="/">here</a></p>
             {this.state.users && this.state.users.firstName &&(
                           <div>
                           <Jumbotron>
                           <h1>Schedule an appointment!</h1>
-                          <h2>For {this.state.users.firstName} {this.state.users.lastName}</h2>
+                          <h2>With {this.state.users.firstName} {this.state.users.lastName}</h2>
                         </Jumbotron>
                         <form>
                           <Input
@@ -150,7 +182,24 @@ class Appointments extends Component {
                 <h1>No user found at this link! Please double check the URL or check with the business owner who sent you the link.</h1>
                 </div>
             )}
+            <Modal
+                isOpen={this.state.modalIsOpen}
+                onAfterOpen={this.afterOpenModal}
+                onRequestClose={this.closeModal}
+                style={customStyles}
+                contentLabel="Appointment Confirmation"
+              >
+      
+                <h2 ref={subtitle => this.subtitle = subtitle}>Your Appointment has been confirmed!</h2>
 
+                <div>Your appointment with {this.state.users.firstName} {this.state.users.lastName} on {moment(this.state.date).add(1, 'days').format("MMMM Do YYYY").toString()} at {moment(this.state.time, "HH:mm a").format("h:mm a")} has been confirmed.
+                <br></br>You will receive a text message as a reminder.</div>
+
+
+                <button onClick={this.closeModal}>Close</button>
+                
+              
+          </Modal>
           </div>
 
       </Container>
