@@ -98,8 +98,6 @@ class Appointments extends Component {
         time: this.state.time
       })
         .then(res => {
-          this.setState({timestaken:[]})
-          this.loadDateTimes()
           this.loadAppointments()
         })
         .catch(err => console.log(err));
@@ -161,7 +159,7 @@ class Appointments extends Component {
                   <ListItem key={appointment._id}>
                     <Link to={"/appointments/" + appointment._id}>
                       <strong>
-                        {appointment.title} by {appointment.client} at {moment(appointment.date).format("MMMM Do YYYY").toString()}  - {moment(appointment.time).format("h:mm a").toString()}
+                        {appointment.title} by {appointment.client} at {moment(appointment.date).add(1, 'days').format("MMMM Do YYYY").toString()}  - {appointment.time}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteAppointment(appointment._id)} />

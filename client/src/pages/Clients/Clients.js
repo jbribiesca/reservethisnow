@@ -5,22 +5,32 @@ import API from "../../utils/API";
 import { Container } from "../../components/Grid";
 import { Input, Date, Time, FormBtn } from "../../components/Form";
 import Axios from "axios";
+import AppointmentPicker from "../../components/AppointmentPicker";
 
 
 class Appointments extends Component {
-  state = {
-    users: [],
-    firstName: "",
-    lastName: "",
-    username: "",
-    _id: "",
-    appointments: [],
-    title: "",
-    client: "",
-    phone: "",
-    date: "",
-    time: ""
-  };
+
+  constructor() {
+    super()
+    this.state = {
+      users: [],
+      firstName: "",
+      lastName: "",
+      username: "",
+      _id: "",
+      appointments: [],
+      title: "",
+      client: "",
+      phone: "",
+      date: "",
+      time: "",
+      timestaken: ""
+    };
+    this.onTimeSelect = this.onTimeSelect.bind(this);
+    this.onDateSelect = this.onDateSelect.bind(this)
+  }
+
+
 
   componentDidMount() {
 
@@ -40,6 +50,27 @@ class Appointments extends Component {
       )
       .catch(err => console.log(err));
   };
+
+  onDateSelect(){
+    console.log("im here")
+    const user = this.state.users._id
+    let date = this.state.date
+    Axios.get("/api/appointments/date/" + date + "/" + user )
+    .then(res =>
+      {
+        this.setState({ timestaken: res.data.appointments.map(item=>item.time), time: "" });
+        console.log(this.state.timestaken)
+      },
+    )
+    .catch(err => console.log(err));
+  }
+
+  onTimeSelect(event) {
+    console.log('change.appo.picker', event.time);
+    this.setState({ time: `${event.time.h}:00` });
+    // Or do something different with your time object
+    
+}
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -97,19 +128,20 @@ class Appointments extends Component {
                           <Date
                             value={this.state.date}
                             onChange={this.handleInputChange}
+                            onBlur={this.onDateSelect}
                             name="date"
                           />
-                          <Time
-                            value={this.state.time}
-                            onChange={this.handleInputChange}
-                            name="time"
-                          />
+
                           <FormBtn
                             disabled={!(this.state.title && this.state.client)}
                             onClick={this.handleFormSubmit}
                           >
                           <span class="fas fa-calendar-check"></span>
                           </FormBtn>
+                          {this.state.timestaken ? <AppointmentPicker 
+                timestaken={this.state.timestaken}
+                onTimeSelect={this.onTimeSelect}
+              />:null}
                         </form>
                         </div>
             )} {!this.state.users && (

@@ -7,7 +7,11 @@ router.route("/")
   .post(appointmentsController.create);
 
 router.route("/date/:date")
-  .get(appointmentsController.findAllDate)
+  .get(appointmentsController.findAllDate);
+
+  router.route("/date/:date/:user")
+  .get(appointmentsController.findAllUserDate);
+  
   
 router.route("/client")
   .post(appointmentsController.clientCreate);

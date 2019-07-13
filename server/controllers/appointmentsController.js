@@ -36,6 +36,22 @@ module.exports = {
       return res.json({ appointments: null });
     }
   },
+
+  findAllUserDate: function (req, res) {
+      let user = req.params.user
+      let date = new Date(req.params.date).toISOString()
+      db.User
+        .find({ _id: user })
+        .populate({ path: "appointments",
+         match: {date: date},
+         options: { sort: { 'date': -1 } } })
+        .then(users => {
+          res.json({ appointments: users[0].appointments });
+        })
+        .catch(err => {console.log(err)
+          res.status(422).json(err)});
+ 
+  },
   findById: function (req, res) {
     if (req.user) {
       db.User
