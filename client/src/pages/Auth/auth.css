@@ -130,7 +130,7 @@ section#entertainment {
 #showcase {
   margin: 0;
   padding: 0;
-  background: url('/book.jpg') no-repeat center/cover;
+  background: url('/images/book.jpg') no-repeat center/cover;
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
