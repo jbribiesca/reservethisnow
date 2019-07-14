@@ -9,6 +9,54 @@ import { Input, Time, Date, FormBtn } from "../../components/Form";
 import AppointmentPicker from "../../components/AppointmentPicker";
 import moment from "moment";
 import axios from "axios";
+import {
+  FacebookShareCount,
+  PinterestShareCount,
+  VKShareCount,
+  OKShareCount,
+  RedditShareCount,
+  TumblrShareCount,
+
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+  VKShareButton,
+  OKShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+  RedditShareButton,
+  EmailShareButton,
+  TumblrShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  ViberShareButton,
+  WorkplaceShareButton,
+  LineShareButton,
+  WeiboShareButton,
+  PocketShareButton,
+  InstapaperShareButton,
+
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  VKIcon,
+  OKIcon,
+  TelegramIcon,
+  WhatsappIcon,
+  RedditIcon,
+  TumblrIcon,
+  MailruIcon,
+  EmailIcon,
+  LivejournalIcon,
+  ViberIcon,
+  WorkplaceIcon,
+  LineIcon,
+  PocketIcon,
+  InstapaperIcon,
+} from 'react-share';
+
 
 class Appointments extends Component {
   // state = {
@@ -21,8 +69,8 @@ class Appointments extends Component {
   //   time: "",
   // };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state={
       appointments: [],
     // timestaken:["12:00", "13:00"],
@@ -31,17 +79,23 @@ class Appointments extends Component {
     phone: "",
     date: "",
     time: "",
-    timestaken: ""
+    timestaken: "",
+    username: "",
+    shareURL: "http://www.reservethisnow.com/" + props.user.username
     };
     this.onTimeSelect = this.onTimeSelect.bind(this);
     this.onDateSelect = this.onDateSelect.bind(this)
-  }
- 
 
+
+  }
+
+  
   componentWillMount() {
     this.loadAppointments();
-
   }
+
+ 
+  
 
   onDateSelect(){
     let date = this.state.date
@@ -63,9 +117,6 @@ class Appointments extends Component {
       .catch(err => console.log(err));
 
   };
-
-
-
 
   deleteAppointment = id => {
     API.deleteAppointment(id)
@@ -103,6 +154,7 @@ class Appointments extends Component {
         .catch(err => console.log(err));
     }
   };
+
 
   render() {
     return (
@@ -171,6 +223,32 @@ class Appointments extends Component {
               )}
           </Col>
         </Row>
+        <h4 style={{textAlign: 'center'}}>Share your website</h4>
+        <div style={{
+          display: 'flex', justifyContent: 'center'
+        }}>
+          <FacebookShareButton
+            url={this.state.shareURL}
+            quote="Schedule an appointment!"
+            className="button"
+          >
+            <FacebookIcon
+              size={32}
+              round={true} />
+          </FacebookShareButton>
+
+          <TwitterShareButton
+            url={this.state.shareURL}
+            quote="Schedule an appointment!"
+            className="button"
+          >
+            <TwitterIcon
+              size={32}
+              round={true} />
+          </TwitterShareButton>
+
+        </div>
+        <br/>
       </Container>
     );
   }

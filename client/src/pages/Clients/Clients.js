@@ -179,10 +179,10 @@ class Appointments extends Component {
                         </div>
             )} {!this.state.users && (
               <div>
-                <h1>No user found at this link! Please double check the URL or check with the business owner who sent you the link.</h1>
+                <h1 style={{color: 'white', textAlign: 'center'}}>No user found at this link! Please double check the URL or check with the business owner who sent you the link.</h1><br/><br/>
                 </div>
             )}
-            <Modal
+            {this.state.users ? <Modal
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={this.afterOpenModal}
                 onRequestClose={this.closeModal}
@@ -199,7 +199,7 @@ class Appointments extends Component {
                 <button onClick={this.closeModal}>Close</button>
                 
               
-          </Modal>
+          </Modal>:null}
           </div>
 
       </Container>
