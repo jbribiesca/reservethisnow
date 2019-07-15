@@ -47,11 +47,7 @@ How to register into our app...
 
 ## Deployment
 
-<insert picture here>
-
-
-## Deployment 
-
+ https://reservethisnow.herokuapp.com/
 
 
 
