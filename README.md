@@ -4,7 +4,6 @@ Is a Cloud-Base Calendar app that allows you to book appointments on your phone,
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -38,10 +37,25 @@ Link: https://reservethisnow.herokuapp.com/
 ### Registering
 
 ```
-How to register into our app...
+Our customers Barbershop Website linked to our Schedule App
 ```
-<insert picture here>
-<insert picture here>
+![screencapture-jt227b-github-io-Barbershop-2019-07-15-00_08_20](https://user-images.githubusercontent.com/46248532/61196637-a62fd000-a695-11e9-9a5d-e16c73818074.png)
+
+```
+Allows customers to set an appointment at their convenience [User Interface]
+```
+![screencapture-reservethisnow-herokuapp-blindbarbershop-2019-07-15-00_10_17](https://user-images.githubusercontent.com/46248532/61196641-af20a180-a695-11e9-8566-283f545c7bca.png)
+
+```
+This is the Business Interface where the owner set an appointment for the customer and triggers a text as a reminder.
+```
+![screencapture-localhost-3000-2019-07-14-23_38_04](https://user-images.githubusercontent.com/46248532/61196646-bb0c6380-a695-11e9-9ea8-87094aaa3ba1.png)
+
+```
+Customer is ready for his next haircut and enjouing the benefit of the text reminder.
+```
+![screencapture-localhost-3000-2019-07-14-23_38_55](https://user-images.githubusercontent.com/46248532/61196651-c2337180-a695-11e9-97c4-e6b29ea4ae2b.png)
+
 
 
 
