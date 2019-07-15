@@ -10,7 +10,7 @@ Is a Cloud-Base Calendar app that allows you to book appointments on your phone,
 Follow the instructions listed below to properly run and register in our Calendar App.
 
 ```
-Git Clone https://github.com/jbribiesca/testingproject3.git
+Git Clone https://github.com/jbribiesca/reservethisnow
 
 npm install
 
