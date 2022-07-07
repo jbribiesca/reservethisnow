@@ -8,7 +8,7 @@
     "axios": "^0.18.1",
     "flatpickr": "^4.6.1",
     "font-awesome": "^4.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-modal": "^3.8.2",
